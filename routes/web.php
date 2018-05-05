@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/service-container/one', 'ServiceContainerSampleController@one');
+Route::get('/service-container/two', 'ServiceContainerSampleController@two');
+Route::get('/service-container/three', 'ServiceContainerSampleController@three');
+Route::get('/service-container/four', 'ServiceContainerSampleController@four');
+Route::get('/service-container/five', 'ServiceContainerSampleController@five');
+Route::get('/service-container/six', 'ServiceContainerSampleController@six');
+Route::get('/service-container/seven', 'ServiceContainerSampleController@seven');
+Route::get('/service-container/eight', 'ServiceContainerSampleController@eight');
+Route::get('/service-container/nine', 'ServiceContainerSampleController@nine');
+Route::get('/service-container/ten', 'ServiceContainerSampleController@ten');
