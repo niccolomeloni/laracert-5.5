@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+cd /var/www/html
+
+echo "fixing directory permissions..."
+
+chgrp www-data -R storage;
+chgrp www-data -R bootstrap/cache;
+
+echo "fixed directory permissions!"
