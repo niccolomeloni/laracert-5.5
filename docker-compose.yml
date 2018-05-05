@@ -9,3 +9,18 @@ services:
     ports:
      - ${HTTP_PORT}:80
      - ${HTTPS_PORT}:443
+
+  nginx:
+    build: ./.docker/nginx
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - ${HTTP_PORT}:80
+      - ${HTTPS_PORT}:443
+    depends_on:
+      - phpfpm
+
+  phpfpm:
+    build: ./.docker/phpfpm
+    volumes:
+      - ./:/var/www/html
