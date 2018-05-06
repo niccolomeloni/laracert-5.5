@@ -4,9 +4,9 @@ cd /var/www/html
 
 echo "fixing directory permissions..."
 
-chmod g+rw -R storage;
 chgrp www-data -R storage;
-chmod g+rw -R bootstrap/cache;
 chgrp www-data -R bootstrap/cache;
+chmod g+rw -R storage;
+chmod g+rw -R bootstrap/cache;
 
 echo "fixed directory permissions!"
