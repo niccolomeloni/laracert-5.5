@@ -26,3 +26,4 @@ Route::get('/service-container/eight', 'ServiceContainerSampleController@eight')
 Route::get('/service-container/nine', 'ServiceContainerSampleController@nine');
 Route::get('/service-container/ten', 'ServiceContainerSampleController@ten');
 Route::get('/service-container/eleven', 'ServiceContainerSampleController@eleven');
+Route::get('/service-container/twelve', 'ServiceContainerSampleController@twelve');

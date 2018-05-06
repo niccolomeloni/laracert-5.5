@@ -13,6 +13,7 @@ use App\Services\ServiceC;
 use App\Http\Controllers\Controller;
 use Psr\Container\ContainerInterface;
 use App\Facades\B;
+use App\User;
 
 class ServiceContainerSampleController extends Controller
 {
@@ -109,6 +110,15 @@ class ServiceContainerSampleController extends Controller
     public function eleven()
     {
         echo "*** eleven *** <br/>";
+        echo "Facades resolution <br/>";
         var_dump(B::getValue());
+    }
+
+    public function twelve()
+    {
+        echo "*** twelve *** <br/>";
+        echo "Real-Time facades resolution <br/>";
+        $user = new User();
+        var_dump($user->getValueC());
     }
 }
