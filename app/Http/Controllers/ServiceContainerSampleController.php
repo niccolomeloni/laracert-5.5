@@ -12,6 +12,7 @@ use App\Services\ServiceB;
 use App\Services\ServiceC;
 use App\Http\Controllers\Controller;
 use Psr\Container\ContainerInterface;
+use App\Facades\B;
 
 class ServiceContainerSampleController extends Controller
 {
@@ -103,5 +104,11 @@ class ServiceContainerSampleController extends Controller
 
         $d = app()->makeWith(IServiceD::class, [ 'value' => 'value-D-makeWith' ]);
         var_dump($d->getValue());
+    }
+
+    public function eleven()
+    {
+        echo "*** eleven *** <br/>";
+        var_dump(B::getValue());
     }
 }

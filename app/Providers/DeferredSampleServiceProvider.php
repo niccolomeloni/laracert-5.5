@@ -37,9 +37,17 @@ class DeferredSampleServiceProvider extends ServiceProvider
         $this->app->singleton(IServiceB::class, function ($app) {
             return new ServiceB();
         });
-
+        
         $this->app->resolving(IServiceB::class, function ($api, $app) {
             echo "resolving singleton IServiceB<br/>";
+        });
+
+        $this->app->singleton('service-b', function ($app) {
+            return $app->make(IServiceB::class);
+        });
+
+        $this->app->resolving('service-b', function ($api, $app) {
+            echo "resolving service-b<br/>";
         });
     }
 
@@ -50,6 +58,9 @@ class DeferredSampleServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return [ IServiceB::class ];
+        return [ 
+            IServiceB::class,
+            'service-b'
+        ];
     }
 }
