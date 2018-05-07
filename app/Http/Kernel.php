@@ -41,6 +41,12 @@ class Kernel extends HttpKernel
             'throttle:60,1',
             'bindings',
         ],
+
+        'middleware-sample' => [
+            \App\Http\Middleware\BeforeMiddleware::class,
+            \App\Http\Middleware\AfterMiddleware::class,
+            \App\Http\Middleware\TerminableMiddleware::class,
+        ]
     ];
 
     /**

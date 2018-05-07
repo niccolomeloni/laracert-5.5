@@ -27,3 +27,7 @@ Route::get('/service-container/nine', 'ServiceContainerSampleController@nine');
 Route::get('/service-container/ten', 'ServiceContainerSampleController@ten');
 Route::get('/service-container/eleven', 'ServiceContainerSampleController@eleven');
 Route::get('/service-container/twelve', 'ServiceContainerSampleController@twelve');
+
+Route::get('middleware', function() {
+    echo "middleware route<br/>";
+})->middleware('middleware-sample');
