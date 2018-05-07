@@ -31,3 +31,5 @@ Route::get('/service-container/twelve', 'ServiceContainerSampleController@twelve
 Route::get('middleware', function() {
     echo "middleware route<br/>";
 })->middleware('middleware-sample');
+
+Route::get('single-action-controller', 'SingleActionController');
