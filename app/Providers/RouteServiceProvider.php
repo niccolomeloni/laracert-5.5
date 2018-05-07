@@ -23,7 +23,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Route::pattern('three', '[A-Za-z]+');
 
         parent::boot();
     }
@@ -39,7 +39,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        //
+        $this->mapRoutingRoutes();
     }
 
     /**
@@ -69,5 +69,20 @@ class RouteServiceProvider extends ServiceProvider
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
+    }
+
+    /**
+     * Define the "routing" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapRoutingRoutes()
+    {
+        Route::prefix('routing')
+             ->middleware('web')
+             ->namespace($this->namespace)
+             ->group(base_path('routes/routing.php'));
     }
 }

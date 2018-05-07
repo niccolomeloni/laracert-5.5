@@ -2,9 +2,12 @@ FROM php:7.2-apache
 
 RUN apt-get update && \
     apt-get install -y git \
+                       libpq-dev \
                        zlib1g-dev
 
-RUN docker-php-ext-install zip
+RUN docker-php-ext-install pdo \
+                           pdo_pgsql \
+                           zip 
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer global require hirak/prestissimo
