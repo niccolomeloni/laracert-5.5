@@ -33,3 +33,5 @@ Route::get('middleware', function() {
 })->middleware('middleware-sample');
 
 Route::get('single-action-controller', 'SingleActionController');
+
+Route::post('posts/store', 'PostController@create');
